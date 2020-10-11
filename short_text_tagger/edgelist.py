@@ -40,9 +40,9 @@ class EdgeList:
             return pd.DataFrame({"source":[],"target":[]})
 
         if not self.directed:
-            words_combinations_generator = chain.from_iterable(combinations(sorted(words),2) for i, words in self.corpus.iteritems())
+            words_combinations_generator = chain.from_iterable(combinations(sorted(words),2) for i, words in self.corpus.iteritems() if len(words)>1)
         else:
-            words_combinations_generator = chain.from_iterable(combinations(words,2) for i, words in self.corpus.iteritems())
+            words_combinations_generator = chain.from_iterable(combinations(words,2) for i, words in self.corpus.iteritems() if len(words)>1)
         source,target = zip(*words_combinations_generator)
         raw_edgelist = pd.DataFrame({
                                     'source': list(source),
