@@ -34,7 +34,7 @@ class EdgeList:
 
     def generate_raw_edgelist(self) -> pd.DataFrame:
         """ provided series of word lists, generate unweighted edge list (duplicate edges allowed) """
-#TODO: check whether you need to sift out lists with len less than 2
+
         if len(self.corpus) == 0:
             # insert warning here
             return pd.DataFrame({"source":[],"target":[]})

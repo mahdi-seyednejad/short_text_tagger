@@ -1,8 +1,8 @@
 import nltk
 import pandas as pd
-from short_text_tagger.text import string_to_valid_word_list
-from short_text_tagger.edgelist import EdgeList
-from short_text_tagger.nsbm import NSBM
+from text import string_to_valid_word_list
+from edgelist import EdgeList
+from nsbm import NSBM
 from collections import defaultdict
 import sys
 
@@ -54,5 +54,6 @@ def generate_topic_distributions_from_corpus(short_texts_df:pd.DataFrame,
   
     return final_short_texts_df
 
-# # read data
-# short_texts_df = pd.read_csv("Sentiment.csv")
+print(list(sys.path))
+# short_texts_df = pd.read_csv("../data/input.csv")
+# generate_topic_distributions_from_corpus(short_texts_df)

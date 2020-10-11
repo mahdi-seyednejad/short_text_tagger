@@ -1,3 +1,11 @@
+import sys 
+import os
+from pathlib import Path 
+cwd = str(os.getcwd())
+parent_dir = str(Path(os.getcwd()).parent)
+sys.path.append(f'{parent_dir}/short_text_tagger/') # if testing from within tests/
+sys.path.append(f'{cwd}/short_text_tagger/') # if testing from parent directory
+
 from short_text_tagger import text
 from nltk.corpus import stopwords
 import pytest
