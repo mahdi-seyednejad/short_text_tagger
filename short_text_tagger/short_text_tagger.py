@@ -54,6 +54,6 @@ def generate_topic_distributions_from_corpus(short_texts_df:pd.DataFrame,
   
     return final_short_texts_df
 
-print(list(sys.path))
-# short_texts_df = pd.read_csv("../data/input.csv")
-# generate_topic_distributions_from_corpus(short_texts_df)
+
+short_texts_df = pd.read_csv("data/input.csv")
+print(generate_topic_distributions_from_corpus(short_texts_df))
