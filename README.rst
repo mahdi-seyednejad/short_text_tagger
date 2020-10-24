@@ -21,6 +21,9 @@ Short-text tagger generates topic distributions for all texts in a corpus.
 
 * Free software: MIT license
 
+Installation
+--------
+``` pip install short_text_tagger ```
 
 Usage 
 --------
