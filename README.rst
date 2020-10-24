@@ -23,7 +23,7 @@ Short-text tagger generates topic distributions for all texts in a corpus.
 
 Installation
 ------------
-``` pip install short_text_tagger ```
+`` pip install short_text_tagger ``
 
 Usage 
 --------
