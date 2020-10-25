@@ -27,24 +27,67 @@ Installation
 
 Usage 
 --------
-This package depends on Graph-tool, which is a C++ library with a Python wrapper. See https://git.skewed.de/count0/graph-tool/-/wikis/installation-instructions
-for instructions on how to install Graph-tool.
+This package depends on graph-tool, which is a C++ library with a Python wrapper. See https://git.skewed.de/count0/graph-tool/-/wikis/installation-instructions
+for instructions on how to install graph-tool.
 
 If you have graph-tool installed and want to use its community detection functionality to generate topics, then
-import the following function into your script, which expects a pandas DataFrame with columns ``id`` and ``text``:
+import ``generate_topic_distributions_from_corpus``, which expects a pandas DataFrame with columns ``id`` and ``text``:
 
-``from short_text_tagger.short_text_tagger import generate_topic_distributions_from_corpus``
+.. code-block:: Python
+
+   # example 
+
+   import pandas as pd 
+   from short_text_tagger.short_text_tagger import generate_topic_distributions_from_corpus
+
+   sample_df = pd.DataFrame({
+        'id':[1,2,3,...],
+        'text':[
+                'The store was crazy today. ',
+                'I went to the store to get apples, oranges, and pears. But the lines were long. Waited 45 minutes to checkout.',
+                'The lines were so short, so I was out of there quickly. I bought apples, pears, and beer.',
+                ...
+        ]
+   })
+
+   topics_df = generate_topic_distributions_from_corpus(sample_df)
+
+The parameter ``block_level`` will influence how many final topics are present in the corpus. If the corpus is small, smaller
+``block_level`` may be necessary due to the lack of many observations. If the corpus is very large, the NSBM will have much 
+larger depth, so you may have to increase the ``block_level`` so you do not have an unwieldy amount of topics. ``block_level``
+is set to 2 by default.
 
 
-If you don't have graph-tool installed or want to substitute other community detection algorithms, then 
-you can import the following function for text preprocessing: ``from short_text_tagger.short_text_tagger import cleaned_texts_df_from_data``,
-which adds a required ``words`` column to the aforementioned DataFrame. 
+If you don't have graph-tool installed or want to provide your own word to topic maps, then 
+you can import functions that perform text preprocessing and text topic probability generation:
 
-After, you can import ``from short_text_tagger.short_text_tagger import assign_text_probabilities``, 
-which expects the input DataFrame with a ``words`` column and a list of dictionaries (word to topic mappings)
-and returns the same DataFrame with appended topic probability columns. The hook is the creation of the list of word to 
-topic mappings. In this package, that functionality is provided by ``from short_text_tagger.short_text_tagger import word_to_block_dict``.
+.. code-block:: Python
 
+   # example 2
+
+   import pandas as pd 
+   from short_text_tagger.short_text_tagger import cleaned_texts_df_from_data
+   from short_text_tagger.short_text_tagger import assign_text_probabilities
+
+   sample_df = pd.DataFrame({
+        'id':[1,2,3,...],
+        'text':[
+                'The store was crazy today. ',
+                'I went to the store to get apples, oranges, and pears. But the lines were long. Waited 45 minutes to checkout.',
+                'The lines were so short, so I was out of there quickly. I bought apples, pears, and beer.',
+                ...
+        ]
+   })
+
+   preprocessed_df = cleaned_texts_df_from_data(sample_df) # adds a "words" column (List[str])
+   
+   # Create your own List[Dict[str,str]], where each element in the list is a dict of word to topic mappings.
+   # In this package, the function "word_to_block_dict" accomplishes this.
+   word_to_topic_dict_list = ...
+
+   final_df = assign_text_probabilities(preprocessed_df,word_to_topic_dict_list) 
+   
+   
 
 Credits
 -------
@@ -55,9 +98,4 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
 
 
-
-.. code-block:: Python
-
-   import pandas as pd 
-   import package2
 
