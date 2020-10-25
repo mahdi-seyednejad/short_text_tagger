@@ -16,7 +16,7 @@ short_text_tagger
 
 
 
-Short-text tagger generates topic distributions for all texts in a corpus.
+short_text_tagger generates topic distributions for all texts in a corpus.
 
 
 * Free software: MIT license

@@ -19,7 +19,7 @@ test_requirements = [ ]
 setup(
     author="John Anthony Bowllan",
     author_email='jbowllan@gmail.com',
-    # python_requires='>=3.5',
+    python_requires='>=3.5',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -42,7 +42,7 @@ setup(
     long_description=readme + '\n\n' + history,
     include_package_data=True,
     keywords='short_text_tagger',
-    name='Short-text tagger',
+    name='short_text_tagger',
     packages=find_packages(include=['short_text_tagger', 'short_text_tagger.*']),
     setup_requires=setup_requirements,
     test_suite='tests',
