@@ -56,5 +56,8 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 
 
 
-``Test block:: 
-More text``
+.. code-block:: Python
+
+   import pandas as pd 
+   import package2
+
