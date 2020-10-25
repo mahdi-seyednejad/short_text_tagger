@@ -1,8 +1,8 @@
 import nltk
 import pandas as pd
 from short_text_tagger.text import string_to_valid_word_list
-from edgelist import EdgeList
-from nsbm import NSBM
+from short_text_tagger.edgelist import EdgeList
+from short_text_tagger.nsbm import NSBM
 from collections import defaultdict
 import sys
 

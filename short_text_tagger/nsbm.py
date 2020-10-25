@@ -1,5 +1,5 @@
 
-from edgelist import EdgeList
+from short_text_tagger.edgelist import EdgeList
 import graph_tool.all as gt
 import pandas as pd
 from collections import defaultdict

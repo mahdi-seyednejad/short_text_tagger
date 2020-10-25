@@ -43,11 +43,11 @@ setup(
     include_package_data=True,
     keywords='short_text_tagger',
     name='short_text_tagger',
-    packages=find_packages(include=['short_text_tagger', 'short_text_tagger.*']),
+    packages=find_packages(include=['short_text_tagger', 'short_text_tagger.short_text_tagger']),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/JohnAnthonyBowllan/short_text_tagger',
-    version='0.1.2',
+    version='0.1.7',
     zip_safe=False,
 )

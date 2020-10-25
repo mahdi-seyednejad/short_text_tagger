@@ -17,4 +17,3 @@ def test_smoke():
     df = generate_topic_distributions_from_corpus(short_texts_df)
     print(df)
     assert len(df) == len(short_texts_df)
-test_smoke()
