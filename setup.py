@@ -10,7 +10,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ["graph_tool>=2.11","pandas>=0.24.0","nltk>=3.5"]
+requirements = ["graphtool>=2.11","pandas>=0.24.0","nltk>=3.5"]
 
 setup_requirements = [ ]
 
