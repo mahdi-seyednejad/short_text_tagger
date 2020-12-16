@@ -19,7 +19,7 @@ short_text_tagger
 short_text_tagger generates topic distributions for all texts in a corpus.
 
 * This package is based on the following paper:
-Bowllan, John, Kailey Cozart, Seyed Mohammad Mahdi Seyednezhad, Anthony Smith, and Ronaldo Menezes. "Short Text Tagging Using Nested Stochastic Block Model: A Yelp Case Study." In International Conference on Complex Networks and Their Applications, pp. 822-833. Springer, Cham, 2019.
+Bowllan, John, Kailey Cozart, Seyed Mohammad Mahdi Seyednezhad, Anthony Smith, and Ronaldo Menezes. "Short Text Tagging Using Nested Stochastic Block Model: A Yelp Case Study." In International Conference on Complex Networks and Their Applications, pp. 822-833. Springer, Cham, 2019. (https://link.springer.com/chapter/10.1007/978-3-030-36687-2_68)
 
 Please cite this paper if you use this package.
 
